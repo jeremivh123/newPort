@@ -1,0 +1,219 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://use.fontawesome.com/f11cb06c83.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <style>
+      body {
+        background: url(/Users/jeremiahhuerta/Desktop/newPort/public/il_fullxfull.471844774_eo0k_original.jpg);
+        background-size: 100% 100%;
+      }
+
+      #header {
+        width: 99%;
+        margin-left: 6px;
+        height: 10%;
+      }
+      h1 {
+        color: aliceblue;
+        display: inline;
+      }
+
+      h2,
+      h3,
+      h4 {
+        color: aliceblue;
+        display: inline;
+        text-decoration: underline;
+      }
+
+      h2 {
+        color: aliceblue;
+        font-size: 50;
+        background-color: black;
+      }
+
+      h3 {
+        color: aliceblue;
+        font-size: 50;
+        background: linear-gradient(to right, black 50%, transparent 50%);
+      }
+
+      h4 {
+        color: aliceblue;
+        font-size: 50;
+      }
+
+      .colu-1,
+      .colu-2,
+      .colu-3 {
+        text-align: center;
+        /*change color to black when hover*/
+
+        width: 31%;
+        height: 15%;
+        float: left;
+        padding: 25px;
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+
+      #aboutHoverbox,
+      #contactHoverBox,
+      #portfolioHoverBox {
+        text-align: center;
+        /*change color to black when hover*/
+        background-color: black;
+        width: 31%;
+        height: 60%;
+        float: left;
+        padding: 25px;
+        margin-left: 16px;
+        margin-right: 16px;
+        visibility: hidden;
+        color: white;
+      }
+
+      #icons {
+        font-size: 100px;
+      }
+
+      p {
+        font-size: 30px;
+        margin-top: 40px;
+      }
+
+      #link {
+        font-size: 25px;
+        bottom: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Jeremiah Huerta</h1>
+    </div>
+
+    <div class="colu-1">
+      <h2>ABOUT</h2>
+    </div>
+    <div class="colu-2">
+      <h3>PORTFOLIO</h3>
+    </div>
+
+    <div class="colu-3">
+      <h4>CONTACT</h4>
+    </div>
+
+    <div id="aboutHoverBox">
+      <i id="icons" class="fa fa-address-card-o" aria-hidden="true"></i>
+      <p>Click below to find out more about me!</p>
+      <div id="link">
+        <a href="/Users/jeremiahhuerta/Desktop/newPort/src/about.html"
+          >Click Here</a
+        >
+      </div>
+    </div>
+
+    <div id="portfolioHoverBox">
+      <i id="icons" class="fa fa-line-chart" aria-hidden="true"></i>
+      <p>See some of my work and experience you may find interesting!</p>
+      <div id="link">
+        <a href="./portfolio.html">My Portfolio</a>
+      </div>
+    </div>
+
+    <div id="contactHoverBox">
+      <i id="icons" class="fa fa-handshake-o" aria-hidden="true"></i>
+      <p>
+        Like what you see and want to find out more? Feel free to click below
+        and get into contact with me!
+      </p>
+      <div id="link">
+        <a href="/Users/jeremiahhuerta/Desktop/newPort/src/contact.html"
+          >Contact Me</a
+        >
+      </div>
+    </div>
+
+    <script>
+      $(".colu-1").hover(function() {
+        $(".colu-1").css("background-color", "black");
+        $("#aboutHoverBox")
+          .css("visibility", "visible")
+          .hover(function() {
+            $(".colu-1").css("background-color", "black");
+          })
+          .mouseleave(function() {
+            $("#aboutHoverBox").css("visibility", "hidden");
+            $(".colu-1").css("background-color", "inherit");
+          });
+        $("#portfolioHoverBox").css("visibility", "hidden");
+        $("#contactHoverBox").css("visibility", "hidden");
+        $(".colu-1").mouseleave(function() {
+          $(".colu-1").css("background-color", "inherit");
+        });
+      });
+
+      $(".colu-2").hover(function() {
+        $(".colu-2").css("background-color", "black");
+        $("#aboutHoverBox").css("visibility", "hidden");
+        $("#portfolioHoverBox")
+          .hover(function() {
+            $(".colu-2").css("background-color", "black");
+          })
+          .css("visibility", "visible")
+          .mouseleave(function() {
+            $("#portfolioHoverBox").css("visibility", "hidden");
+            $(".colu-2").css("background-color", "inherit");
+          });
+        $("#contactHoverBox").css("visibility", "hidden");
+        $(".colu-2").mouseleave(function() {
+          $(".colu-2").css("background-color", "inherit");
+        });
+      });
+
+      $(".colu-3").hover(function() {
+        $(".colu-3").css("background-color", "black");
+        $("#aboutHoverBox").css("visibility", "hidden");
+        $("#portfolioHoverBox").css("visibility", "hidden");
+        $("#contactHoverBox")
+          .hover(function() {
+            $(".colu-3").css("background-color", "black");
+          })
+          .css("visibility", "visible")
+          .mouseleave(function() {
+            $("#contactHoverBox").css("visibility", "hidden");
+            $(".colu-3").css("background-color", "inherit");
+          });
+        $(".colu-3").mouseleave(function() {
+          $(".colu-3").css("background-color", "inherit");
+        });
+      });
+
+      $("#header").hover(function() {
+        $("#aboutHoverBox").css("visibility", "hidden");
+        $("#portfolioHoverBox").css("visibility", "hidden");
+        $("#contactHoverBox").css("visibility", "hidden");
+      });
+
+      /*$("body,html").hover(function() {
+        $("#aboutHoverBox").css("visibilty", "hidden");
+      });*/
+    </script>
+  </body>
+</html>
